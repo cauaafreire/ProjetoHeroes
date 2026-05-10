@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./style.css"
 
 // um vetor de objetos
 const heroesList = [
@@ -16,6 +17,7 @@ const heroesList = [
 
 function Heroes() {
     const [heroesGlobal, setHeroesGlobal] = useState(null)
+    const [heroImages, setHeroImages] = useState({})
 
     const getHeroesData = (idHeroes) => {
 
@@ -52,26 +54,35 @@ function Heroes() {
 
             {heroesGlobal && (
                 <div className="Heroes-info">
-                    <h2>Nome: {heroesGlobal.nome}</h2>
-                    <h2>Nome completo: {heroesGlobal.nomeCompleto}</h2>
-                    <h2>Inteligência: {heroesGlobal.inteligencia}</h2>
-                    <h2>Força: {heroesGlobal.forca}</h2>
-                    <h2>Velocidade: {heroesGlobal.velocidade}</h2>
-                    <h2>Poder: {heroesGlobal.poder}</h2>
-                    <h2>Altura: {heroesGlobal.altura}</h2>
-                    <h2>Peso: {heroesGlobal.peso}</h2>
-                    <h2>Editora: {heroesGlobal.editora}</h2>
-                    <h2>Alinhamento: {heroesGlobal.alinhamento}</h2>
-                    <img src={heroesGlobal.imagem} alt={heroesGlobal.nome}/>
+
+                    <img src={heroesGlobal.imagem} alt={heroesGlobal.nome} />
+
+                    <div className="hero-details">
+                        <h2>Nome: {heroesGlobal.nome}</h2>
+                        <h2>Nome completo: {heroesGlobal.nomeCompleto}</h2>
+                        <h2>Inteligência: {heroesGlobal.inteligencia}</h2>
+                        <h2>Força: {heroesGlobal.forca}</h2>
+                        <h2>Velocidade: {heroesGlobal.velocidade}</h2>
+                        <h2>Poder: {heroesGlobal.poder}</h2>
+                        <h2>Altura: {heroesGlobal.altura}</h2>
+                        <h2>Peso: {heroesGlobal.peso}</h2>
+                        <h2>Editora: {heroesGlobal.editora}</h2>
+                    </div>
+
                 </div>
             )}
 
-            {heroesList.map((item) => (
+
+            <div className="cards-area">
+                {heroesList.map((item) => (
                     <div className="card" key={item.id}>
-                        <p>{item.nome}</p>
-                        <button onClick={() => (getHeroesData(item.id))}>Saiba mais</button>
+                        <div className="card-content">
+                            <p>{item.nome}</p>
+                            <button onClick={() => getHeroesData(item.id)}>Saiba mais</button>
+                        </div>
                     </div>
                 ))}
+            </div>
         </div>
     )
 }
