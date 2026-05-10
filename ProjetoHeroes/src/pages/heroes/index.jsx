@@ -37,7 +37,6 @@ function Heroes() {
                     altura: json.appearance.height[1],
                     peso: json.appearance.weight[1],
                     editora: json.biography.publisher,
-                    alinhamento: json.biography.alignment,
                     imagem: json.images.lg
                 }
                 setHeroesGlobal(heroesFetch)

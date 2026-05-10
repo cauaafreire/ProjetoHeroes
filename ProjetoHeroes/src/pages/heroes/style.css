@@ -31,8 +31,6 @@ padding:30px;
 display:flex;
 gap:35px;
 align-items:center;
-margin-bottom:30px;
-backdrop-filter:blur(12px);
 }
 
 .Heroes-info img{
@@ -77,12 +75,6 @@ transform:translateY(-6px);
 border:1px solid rgba(255,255,255,0.18);
 }
 
-.card img{
-width:100%;
-height:320px;
-object-fit:cover;
-}
-
 .card-content{
 padding:18px;
 display:flex;
@@ -109,23 +101,5 @@ transition:0.3s;
 }
 
 .card-content button:hover{
-background:#3461ff;
-}
-
-@media(max-width:900px){
-
-.Heroes-info{
-flex-direction:column;
-text-align:center;
-}
-
-.Heroes-info img{
-width:100%;
-max-width:320px;
-}
-
-.header h1{
-font-size:36px;
-}
-
+background:#2652ee;
 }
